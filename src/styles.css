@@ -44,7 +44,7 @@ body
   z-index: 0;
 }
 .aside{
-  width: 190px;
+  width: 200px;
   background:var(--bg-black-100);
   position:fixed;
   left: 0;
