@@ -2,6 +2,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body
+{ margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 0;
+  line-height:1.5 ;
+  font-size: 16px;
+}
+
+:root {
+  --bg-black-900: #f2f2fc;
+  --bg-black-100: #fdfaff;
+  --bg-black-50: #e8dfec;
+  --text-blac-900:#302e4d;
+  --text-black-700: #504e70;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline:  none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+::before,::after{
+  box-sizing: border-box;
+}
+.section{
+  background: var(--bg-black-900);
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  /*left: 100px;*/
+  top: 0;
+
+  right: 0;
+  padding:  10px;
+  opacity: 1;
+  z-index: 0;
+}
+.aside{
+  width: 190px;
+  background:var(--bg-black-100);
+  position:fixed;
+  left: 0;
+  top: 0;
+  padding: 30px;
+  border-right: 1px solid var(--bg-black-50);
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+
+}
 
