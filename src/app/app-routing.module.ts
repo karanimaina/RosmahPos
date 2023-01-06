@@ -4,12 +4,14 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {SupplierComponent} from "./supplier/supplier.component";
 import {CustomerComponent} from "./customer/customer.component";
 import {ProductsComponent} from "./products/products.component";
+import {SalesComponent} from "./sales/sales.component";
 
 const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'supplier',component:SupplierComponent},
   {path:'customer',component:CustomerComponent},
   {path:'product',component:ProductsComponent},
+  {path:'sale',component:SalesComponent},
 
 
 ];
