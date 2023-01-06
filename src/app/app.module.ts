@@ -8,6 +8,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SupplierComponent } from './supplier/supplier.component';
 import { CustomerComponent } from './customer/customer.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CustomerComponent } from './customer/customer.component';
     NavigationComponent,
     DashboardComponent,
     SupplierComponent,
-    CustomerComponent
+    CustomerComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
