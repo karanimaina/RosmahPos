@@ -12,6 +12,7 @@ import { ProductsComponent } from './products/products.component';
 import { SalesComponent } from './sales/sales.component';
 import { SaleReportComponent } from './sale-report/sale-report.component';
 import { SupplierFormComponent } from './supplier-form/supplier-form.component';
+import { CustomerFormComponent } from './customer-form/customer-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SupplierFormComponent } from './supplier-form/supplier-form.component';
     ProductsComponent,
     SalesComponent,
     SaleReportComponent,
-    SupplierFormComponent
+    SupplierFormComponent,
+    CustomerFormComponent
   ],
   imports: [
     BrowserModule,
