@@ -11,6 +11,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { ProductsComponent } from './products/products.component';
 import { SalesComponent } from './sales/sales.component';
 import { SaleReportComponent } from './sale-report/sale-report.component';
+import { SupplierFormComponent } from './supplier-form/supplier-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SaleReportComponent } from './sale-report/sale-report.component';
     CustomerComponent,
     ProductsComponent,
     SalesComponent,
-    SaleReportComponent
+    SaleReportComponent,
+    SupplierFormComponent
   ],
   imports: [
     BrowserModule,
