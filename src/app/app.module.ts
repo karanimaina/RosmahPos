@@ -14,6 +14,9 @@ import { SaleReportComponent } from './sale-report/sale-report.component';
 import { SupplierFormComponent } from './supplier-form/supplier-form.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import {FormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { ProductFormComponent } from './product-form/product-form.component';
     SaleReportComponent,
     SupplierFormComponent,
     CustomerFormComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
