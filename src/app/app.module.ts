@@ -16,7 +16,6 @@ import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import {FormsModule} from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,7 @@ import { ModalComponent } from './modal/modal.component';
     SupplierFormComponent,
     CustomerFormComponent,
     ProductFormComponent,
-    ModalComponent
+
   ],
   imports: [
     BrowserModule,
