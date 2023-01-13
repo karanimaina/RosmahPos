@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Product} from "../product";
+import {Customers} from "../customers";
 
 @Component({
   selector: 'app-customer',
@@ -9,7 +11,7 @@ import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class CustomerComponent {
   closeResult = '';
-  products: [];
+  customers: Customers[];
   constructor(private route:Router, private modalService:NgbModal) {}
   openComponent(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
