@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Route, Router, Routes} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Product} from "../product";
 
 @Component({
   selector: 'app-products',
@@ -11,6 +12,7 @@ export class ProductsComponent {
 
   constructor(private route:Router, private modalService:NgbModal) {}
   closeResult = '';
+  products:Product[]
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
