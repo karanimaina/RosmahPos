@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
+  @Input() control:FormControl = new  FormControl()
 
+  @Input() type  = "text"
+  @Input() placeholder = ''
+  @Input() format = ''
+  constructor() {}
+
+  ngOnInit(): void {}
 }

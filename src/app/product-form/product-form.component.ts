@@ -20,26 +20,26 @@ export class ProductFormComponent {
     Validators.required,
     Validators.minLength(4)
   ])
-  expiryDate = new FormControl("product name",[
+  expiryDate = new FormControl(0,[
     Validators.required,
-    Validators.minLength(4)
+
   ])
 
-  buyingPrice = new FormControl("product name",[
+  buyingPrice = new FormControl(0,[
     Validators.required,
-    Validators.minLength(4)
+
   ])
-  sellingPrice = new FormControl("product name",[
+  sellingPrice = new FormControl(0,[
     Validators.required,
-    Validators.minLength(4)
+
   ])
   quantity = new FormControl("product name",[
     Validators.required,
-    Validators.minLength(4)
+
   ])
   total = new FormControl("product name",[
     Validators.required,
-    Validators.minLength(4)
+
   ])
   product = new FormGroup({
     productName: this.productName,
