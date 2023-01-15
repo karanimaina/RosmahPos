@@ -14,8 +14,9 @@ import { SaleReportComponent } from './sale-report/sale-report.component';
 import { SupplierFormComponent } from './supplier-form/supplier-form.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { ProductFormComponent } from './product-form/product-form.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SupplierFormComponent,
     CustomerFormComponent,
     ProductFormComponent,
+    InputComponent,
 
   ],
   imports: [
@@ -37,7 +39,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
