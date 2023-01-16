@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {Supplier} from "../supplier";
+import {Supplier} from "../models/supplier";
 
 @Component({
   selector: 'app-supplier',

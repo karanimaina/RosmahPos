@@ -17,6 +17,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InputComponent } from './input/input.component';
+import {ApiService} from "./service/api.service";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { InputComponent } from './input/input.component';
     NgbModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

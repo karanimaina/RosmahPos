@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Product} from "../models/product";
+import {ApiService} from "../service/api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-form',
@@ -7,38 +10,48 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent {
-  productName = new FormControl("product name",[
+
+
+  constructor(private apiService:ApiService,private  router :Router) {
+  }
+
+  product1:Product
+  productName = new FormControl("",[
     Validators.required,
     Validators.minLength(4)
   ])
 
-  category = new FormControl("product name",[
+  category = new FormControl("",[
     Validators.required,
     Validators.minLength(4)
   ])
-  supplier = new FormControl("product name",[
+  supplier = new FormControl("",[
     Validators.required,
     Validators.minLength(4)
   ])
-  expiryDate = new FormControl(0,[
+  expiryDate = new FormControl('',[
     Validators.required,
 
   ])
 
   buyingPrice = new FormControl(0,[
     Validators.required,
-
   ])
   sellingPrice = new FormControl(0,[
     Validators.required,
+    Validators.pattern(/^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/)
 
   ])
-  quantity = new FormControl("product name",[
+  quantity = new FormControl(0,[
     Validators.required,
+    Validators.pattern(/^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/)
+
 
   ])
-  total = new FormControl("product name",[
+  total = new FormControl(0,[
     Validators.required,
+    Validators.pattern(/^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/)
+
 
   ])
   product = new FormGroup({
@@ -49,8 +62,17 @@ export class ProductFormComponent {
     buyingPrice: this.buyingPrice,
     sellingPrice: this.sellingPrice,
     quantity:this.quantity,
-    total:this.total
-
 
   })
-}
+
+  saveProduct() {
+    this.product1 = new Product(this.productName.value!, this.category.value!, this.supplier.value!, this.expiryDate.value!, this.buyingPrice.value!, this.sellingPrice.value!, this.quantity.value!,)
+    // try {
+      this.apiService.CreateProduct(this.product1).subscribe((res: any) => {
+        this.router.navigate(["/product"])
+      })
+    // }catch (e){
+    //
+    // }
+  }
+  }

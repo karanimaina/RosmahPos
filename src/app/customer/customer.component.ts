@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {Product} from "../product";
-import {Customers} from "../customers";
+import {Product} from "../models/product";
+import {Customers} from "../models/customers";
 
 @Component({
   selector: 'app-customer',
