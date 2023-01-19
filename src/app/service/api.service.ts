@@ -4,28 +4,40 @@ import {Customers} from "../models/customers";
 import {Observable} from "rxjs";
 import {Supplier} from "../models/supplier";
 import {Product} from "../models/product";
-import {Sales} from "../models/sales";
+import {GetProduct} from "../models/get-product";
+import {NameQuantity} from "../models/name-quantity";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
+  BASE_API = 'http://localhost:8080'
 
   constructor(private httpClient :HttpClient) {}
-  BASE_API = 'http://localhost:8080'
+
   CreateCustomer(customer:Customers):Observable<any>{
-    return  this.httpClient.post<Customers>(`${this.BASE_API}api/v1/add/customer`,customer)
+    return  this.httpClient.post<Customers>(`http://localhost:8080/api/v1/add/customer`,customer)
+  }
+   GetCustomer():Observable<any>{
+    return  this.httpClient.get(`http://localhost:8080/api/v1/get/customers`)
   }
   CreateSupplier(supplier:Supplier):Observable<any>{
-    return  this.httpClient.post<Supplier>(`${this.BASE_API}/api/v1/add/supplier`,supplier)
+    return  this.httpClient.post<Supplier>(`${this.BASE_API}/api/v1//get/suppliers`,supplier)
   }
   CreateProduct(product:Product):Observable<any>{
     return  this.httpClient.post<Product>(`${this.BASE_API}/api/v1/add/product`,product)
   }
-  CreateSale(sale:Sales):Observable<any>{
-    return  this.httpClient.post<Sales>(`${this.BASE_API}/api/v1/add/sales`,sale)
-  }
   GetProducts():Observable<any>{
-    return  this.httpClient.get<Product[]>(`${this.BASE_API}/api/v1/get/products`)
+    return  this.httpClient.get<GetProduct[]>(`http://localhost:8080/api/v1/get/products`)
+  }
+  CreateSale(sale:NameQuantity):Observable<any>{
+      return  this.httpClient.post<NameQuantity>(`${this.BASE_API}/api/v1/add/sales`,sale)
+  }
+  GetSale():Observable<any> {
+    return this.httpClient.get(`${this.BASE_API}/api/v1/get/sales`)
+  }
+  GetSuppliers():Observable<any>{
+    return  this.httpClient.get(`${this.BASE_API}/api/v1/get/suppliers`)
   }
 }

@@ -39,12 +39,10 @@ export class ProductFormComponent {
   ])
   sellingPrice = new FormControl(0,[
     Validators.required,
-    Validators.pattern(/^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/)
 
   ])
   quantity = new FormControl(0,[
     Validators.required,
-    Validators.pattern(/^(0*[1-9][0-9]*(\.[0-9]*)?|0*\.[0-9]*[1-9][0-9]*)$/)
 
 
   ])

@@ -12,51 +12,36 @@
     </div>
   </div>
 
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <div class="flex items-center justify-between pb-4">
-      <div>
-    <table *ngFor="let supplier of suppliers" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-      <tr>
-        <th scope="col" class="px-6 py-3">
-         Supplier
-        </th>
-        <th scope="col" class="px-6 py-3">
-         Contact Person
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Contact Number
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Debt
-        </th>
-        <th scope="col" class="px-6 py-3">
-          Action
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+  <div class="grid grid-cols-1 p-8 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out" *ngFor="let supplier of suppliers"  >
+      <article   class="overflow-hidden rounded-lg shadow-lg">
+        <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+        <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+          <h1 class="text-lg">
+            <a class="no-underline hover:underline text-black" >
+              Name : {{supplier.supplierName}}
+            </a>
+          </h1>
+        </header>
+        <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+          <p class="text-grey-darker text-sm">
+            Contact: {{supplier.contactPerson}}
+          </p>
+        </header>
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+          <a class="flex items-center no-underline hover:underline text-black" >
+            <p class="ml-2 text-sm">
+              Phone: {{supplier.contactPhoneNumber}}
+            </p>
+          </a>
+          <a class="no-underline text-grey-darker hover:text-red-dark" >
+            <p class="ml-2 text-sm">
+              debt: {{supplier.debt}}
+            </p>
+          </a>
+        </footer>
 
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          {{supplier.supplierName}}
-        </th>
-        <td class="px-6 py-4">
-         {{supplier.contactPerson}}
-        </td>
-        <td class="px-6 py-4">
-          {{supplier.contactPhoneNumber}}
-        </td>
-        <td class="px-6 py-4">
-        {{supplier.debt}}
-        </td>
-        <td class="px-6 py-4">
-          <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+      </article>
     </div>
   </div>
 </section>

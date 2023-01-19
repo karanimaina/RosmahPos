@@ -11,45 +11,30 @@
       <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 w-80 justify-end hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" (click)="openComponent(content)"> Add Customer</button>
     </div>
   </div>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <div class="flex items-center justify-between pb-4">
-      <div>
-        <table *ngFor="let customer of customers" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3">
-              Supplier
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Contact Person
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Contact Number
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Debt
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Action
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+  <div class="grid grid-cols-1 p-8 gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="transition-transform transform hover:scale-105 cursor-pointer duration-300 ease-in-out" *ngFor="let customer of customers"  >
+      <article   class="overflow-hidden rounded-lg shadow-lg">
+        <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+        <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+          <h1 class="text-lg">
+            <a class="no-underline hover:underline text-black" >
+              Name: {{customer.customerName}}
+            </a>
+          </h1>
+          <p class="text-grey-darker text-sm">
+            Phone: {{customer.phoneNumber}}
+          </p>
+        </header>
 
-            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-              {{customer.customerName}}
-            </th>
-            <td class="px-6 py-4">
-              {{customer.phoneNumber}}
-            </td>
-            <td class="px-6 py-4">
-              {{customer.debt}}
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+          <a class="flex items-center no-underline hover:underline text-black" >
+            <p class="ml-2 text-sm">
+              Debt: {{customer.debt}}
+            </p>
+          </a>
+        </footer>
+
+      </article>
     </div>
   </div>
 </section>

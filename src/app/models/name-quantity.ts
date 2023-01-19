@@ -1,4 +1,4 @@
-export class Sales {
+export class NameQuantity {
   name:string
   quantity:number
 

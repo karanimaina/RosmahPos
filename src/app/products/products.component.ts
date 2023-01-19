@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Route, Router, Routes} from "@angular/router";
+import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {Product} from "../models/product";
 import {ApiService} from "../service/api.service";
+import {GetProduct} from "../models/get-product";
 
 @Component({
   selector: 'app-products',
@@ -10,21 +10,25 @@ import {ApiService} from "../service/api.service";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit{
+  products:GetProduct[]
+  constructor(private api:ApiService,private route:Router, private modalService:NgbModal) {}
 
-  constructor(private route:Router, private modalService:NgbModal,private api:ApiService) {}
- products:Product[]
   ngOnInit() {
-    this.api.GetProducts().subscribe((res:any)=>{
-      this.products= res
-    })
-
+   this.loadData()
     }
   closeResult = '';
+  loadData(){
+    this.api.GetProducts().subscribe(response  =>
+    {this.products =response.data})
+    console.log(this.products)
+  }
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
+        this.loadData()
         this.closeResult = `Closed with: ${result}`;
+
       },
       (reason) => {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -41,7 +45,4 @@ export class ProductsComponent implements OnInit{
       return `with: ${reason}`;
     }
   }
-
-
-
-    }
+}
