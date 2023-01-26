@@ -16,7 +16,7 @@
       <article   class="overflow-hidden rounded-lg shadow-lg">
         <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-          <h1 class="text-sm-start">
+          <h1 class="text-sm-start ">
             <a class="no-underline hover:underline text-black" >
               Name : {{product.productName}}
             </a>
@@ -25,7 +25,7 @@
         </header>
         <header class="flex items-center justify-between leading-tight p-2 md:p-4">
           <p class="text-sm">
-            <a class="no-underline hover:underline text-black" >
+            <a class="no-underline hover:underline text-black description" >
               Name : {{product.productCode}}
             </a>
           </p>
@@ -35,29 +35,30 @@
         <footer class="flex items-center justify-between leading-none p-2 md:p-4">
           <a class="flex items-center no-underline hover:underline text-black" >
             <p class="ml-2 text-sm">
-              Category: {{product.category}}
+             Selling Price {{product.sellingPrice}}
             </p>
           </a>
-          <a class="no-underline text-grey-darker hover:text-red-dark" >
+          <a class="no-underline  text-grey-darker hover:text-red-dark " >
             <p class="ml-2 text-sm">
-              Totals: {{product.buyingPrice}}
+              Quantity: {{product.quantity}}
             </p>
           </a>
         </footer>
-        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-          <a class="flex items-center no-underline hover:underline text-black" >
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4 ">
+          <a class="flex items-center no-underline hover:underline text-black description" >
             <p class="ml-2 text-sm">
-              Category: {{product.sellingPrice}}
+
+              Category: {{product.category}}
             </p>
           </a>
-          <a class="no-underline text-grey-darker hover:text-red-dark" >
+          <a class="no-underline text-grey-darker hover:text-red-dark description" >
             <p class="ml-2 text-sm">
             Arrived on: {{product.dateReceived}}
             </p>
           </a>
         </footer>
-        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-          <a class="flex items-center no-underline hover:underline text-black" >
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4 ">
+          <a class="flex items-center no-underline hover:underline text-black description" >
             <p class="ml-2 text-sm">
               Expiry: {{product.expiryDate}}
             </p>
@@ -68,31 +69,30 @@
             </p>
           </a>
         </footer>
-        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-          <a class="flex items-center no-underline hover:underline text-black" >
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4  ">
+          <a class="flex items-center no-underline hover:underline text-black description" >
             <p class="ml-2 text-sm">
-              Quantity: {{product.quantity}}
+              Buying price: {{product.buyingPrice}}
             </p>
           </a>
-          <a class="no-underline text-grey-darker hover:text-red-dark" >
+          <a class="no-underline text-grey-darker hover:text-red-dark description" >
             <p class="ml-2 text-sm">
               Stock_Amt: {{product.totalProductAmount}}
             </p>
           </a>
         </footer>
-        <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-          <a class="flex items-center no-underline hover:underline text-black" >
+        <footer class="flex items-center justify-between leading-none p-2 md:p-4  ">
+          <a class="flex items-center no-underline hover:underline text-black description" >
             <p class="ml-2 text-sm">
               Supplier: {{product.supplier}}
             </p>
           </a>
           <a class="no-underline text-grey-darker hover:text-red-dark" >
             <p class="ml-2 text-sm">
-              Totals: {{product.expiryDate}}
+             Expiry: {{product.expiryDate}}
             </p>
           </a>
         </footer>
-
       </article>
     </div>
   </div>

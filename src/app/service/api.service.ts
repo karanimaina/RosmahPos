@@ -23,7 +23,7 @@ export class ApiService {
     return  this.httpClient.get(`http://localhost:8080/api/v1/get/customers`)
   }
   CreateSupplier(supplier:Supplier):Observable<any>{
-    return  this.httpClient.post<Supplier>(`${this.BASE_API}/api/v1//get/suppliers`,supplier)
+    return  this.httpClient.post<Supplier>(`${this.BASE_API}/api/v1/add/supplier`,supplier)
   }
   CreateProduct(product:Product):Observable<any>{
     return  this.httpClient.post<Product>(`${this.BASE_API}/api/v1/add/product`,product)

@@ -64,7 +64,7 @@ export class ProductFormComponent {
   })
 
   saveProduct() {
-    this.product1 = new Product(this.productName.value!, this.category.value!, this.supplier.value!, this.expiryDate.value!, this.buyingPrice.value!, this.sellingPrice.value!, this.quantity.value!,)
+    this.product1 = new Product(this.productName.value!, this.category.value!, this.supplier.value!, this.expiryDate.value!, this.buyingPrice.value!, this.sellingPrice.value!, this.quantity.value!)
     // try {
       this.apiService.CreateProduct(this.product1).subscribe((res: any) => {
         this.router.navigate(["/product"])

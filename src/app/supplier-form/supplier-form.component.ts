@@ -40,7 +40,7 @@ supplier:Supplier
 
   saveSupplier() {
     this.supplier = new Supplier(this.supplierName.value!,this.contactName.value!, this.contactPhone.value!, this.debt.value!)
-    this.api.CreateSupplier(this.supplier).subscribe(()=>{
+    this.api.CreateSupplier(this.supplier).subscribe((res:any)=>{
       this.router.navigate(['/supplier'])
     })
   }

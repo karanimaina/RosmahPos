@@ -1,0 +1,7 @@
+ .description {
+  display: none;
+}
+
+:hover .description {
+  display: block;
+}
