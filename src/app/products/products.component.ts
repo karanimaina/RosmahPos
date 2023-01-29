@@ -22,7 +22,6 @@ export class ProductsComponent implements OnInit{
     {this.products =response.data})
     console.log(this.products)
   }
-
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
       (result) => {
@@ -35,7 +34,6 @@ export class ProductsComponent implements OnInit{
       },
     );
   }
-
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -45,4 +43,6 @@ export class ProductsComponent implements OnInit{
       return `with: ${reason}`;
     }
   }
+
+
 }

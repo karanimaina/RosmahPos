@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Product} from "../models/product";
 import {ApiService} from "../service/api.service";
 import {Router} from "@angular/router";
+import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-product-form',
@@ -12,7 +13,7 @@ import {Router} from "@angular/router";
 export class ProductFormComponent {
 
 
-  constructor(private apiService:ApiService,private  router :Router) {
+  constructor(private apiService:ApiService,private  router :Router,private modalService:NgbModal) {
   }
 
   product1:Product
@@ -62,7 +63,7 @@ export class ProductFormComponent {
     quantity:this.quantity,
 
   })
-
+  closeResult = '';
   saveProduct() {
     this.product1 = new Product(this.productName.value!, this.category.value!, this.supplier.value!, this.expiryDate.value!, this.buyingPrice.value!, this.sellingPrice.value!, this.quantity.value!)
     // try {
@@ -72,5 +73,26 @@ export class ProductFormComponent {
     // }catch (e){
     //
     // }
+  }
+  open(content: any) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+      (result) => {
+        this.closeResult = `Closed with: ${result}`;
+
+      },
+      (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      },
+    );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
   }
