@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {ModalDismissReasons, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ApiService} from "../service/api.service";
 import {GetProduct} from "../models/get-product";
+import {error} from "@angular/compiler-cli/src/transformers/util";
 
 @Component({
   selector: 'app-products',
@@ -17,10 +18,10 @@ export class ProductsComponent implements OnInit{
    this.loadData()
     }
   closeResult = '';
-  loadData(){
-    this.api.GetProducts().subscribe(response  =>
-    {this.products =response.data})
-    console.log(this.products)
+  loadData() {
+      this.api.GetProducts().subscribe(response => {
+        this.products = response.data
+      })
   }
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(

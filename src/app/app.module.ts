@@ -21,6 +21,7 @@ import {ApiService} from "./service/api.service";
 import {HttpClientModule} from "@angular/common/http";
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { LoginComponent } from './login/login.component';
     InputComponent,
     RegistrationComponent,
     LoginComponent,
+    ErrorComponent,
 
   ],
   imports: [

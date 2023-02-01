@@ -11,13 +11,14 @@ import {SupplierFormComponent} from "./supplier-form/supplier-form.component";
 import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {NavigationComponent} from "./navigation/navigation.component";
+import {ErrorComponent} from "./error/error.component";
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   pathMatch: 'full',
-  //   redirectTo: 'login'
-  // },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'register'
+  },
   {path:'dashboard',component:DashboardComponent},
   {path:'supplier',component:SupplierComponent},
   {path:'customer',component:CustomerComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path:'customer-form',component:SupplierFormComponent},
   {path:'register' ,component:RegistrationComponent},
   {path:'login' ,component:LoginComponent},
-  {path:'nav' ,component:NavigationComponent}
+  {path:'nav' ,component:NavigationComponent},
+  {path:'**',component:ErrorComponent}
 ];
 
 @NgModule({

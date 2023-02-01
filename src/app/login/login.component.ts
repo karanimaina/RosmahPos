@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,10 @@ export class LoginComponent {
   }
 
   login() {
-    this.route.navigate(["/nav"])
+    this.route.navigate(['/nav'])
+    // if (res=="failure"){
+    //   alert("an error has occurred")
+    // }
     console.log("button clicked")
   }
 }
