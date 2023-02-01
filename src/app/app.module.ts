@@ -37,8 +37,6 @@ import { ErrorComponent } from './error/error.component';
     CustomerFormComponent,
     ProductFormComponent,
     InputComponent,
-    RegistrationComponent,
-    LoginComponent,
     ErrorComponent,
 
   ],
